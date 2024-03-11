@@ -20,7 +20,9 @@ module.exports = {
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx'],
-        moduleDirectory: ['node_modules', 'src/']
+        moduleDirectory: ['node_modules', 'src/'],
+        paths: [path.resolve(__dirname, '')]
+
       }
     },
     react: {
