@@ -10,7 +10,7 @@ import Success from 'src/modules/Ticket/Success'
 import FilmDetail from 'src/modules/Home/components/FilmDetail'
 import Purchase from 'src/modules/Home/components/Purchase'
 import Login from 'src/modules/Authentication/pages/Login'
-import useRouteElements from 'useRouteElements'
+import useRouteElements from 'src/useRouteElements'
 const User = lazy(() => import('src/modules/AdminMovie/pages/User'))
 
 // Không import trực tiếp các pages, vì nó sẽ được tải tất cả ở lần đầu tiên
