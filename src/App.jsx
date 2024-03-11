@@ -31,7 +31,7 @@ const AddMovie = lazy(() => import('src/modules/AdminMovie/pages/AddMovie'))
 function App() {
   const routeElements = useRouteElements()
 
-  return { routeElements }
+  return <>{routeElements}</>
 
   // Suspense: hiển thị fallback UI (Loading) khi các file JS của một page đang được tải về
   // <Suspense fallback={<h1>Loading...</h1>}>

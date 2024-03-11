@@ -12,7 +12,7 @@ import { UserOutlined } from '@ant-design/icons'
 import React from 'react'
 import path from 'src/constants/path'
 
-const Login = () => {
+const Login = ({ children }) => {
   const {
     handleSubmit
     // Sử dụng kết hợp với Controller thay thế cho register đối với các trường hợp component không hỗ trợ ref
@@ -168,6 +168,7 @@ const Login = () => {
             Bạn chưa có tài khoản ? Đăng ký ngay
           </Link>
         </div>
+        {children}
       </Content>
     </>
   )

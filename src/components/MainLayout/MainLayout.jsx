@@ -2,10 +2,10 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import { Layout } from 'antd'
 
-import Header from '../Header'
+import Header from 'src/components/Header'
 // import Footer from "components/footer/Footer";
 
-const MainLayout = () => {
+const MainLayout = ({ children }) => {
   return (
     <Layout>
       <Header />
@@ -13,7 +13,7 @@ const MainLayout = () => {
         {/* Nơi chứa component được định nghĩa trong router */}
 
         {/* component Outlet sẽ là nơi render ra các children route  */}
-        <Outlet />
+        {children}
       </Layout.Content>
 
       {/* <Layout.Footer>

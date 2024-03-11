@@ -3,7 +3,7 @@ import { Layout } from 'antd'
 import { Content } from 'antd/lib/layout/layout'
 import BackGround from './BackGround'
 
-const AuthLayout = () => {
+const AuthLayout = ({ children }) => {
   return (
     // <Row>
     //   <Col span={14}>
@@ -14,9 +14,10 @@ const AuthLayout = () => {
     //   </Col>
     // </Row>
     <Layout>
-      <Content>
+      {/* <Content>
         <BackGround />
-      </Content>
+      </Content> */}
+      {children}
     </Layout>
   )
 }

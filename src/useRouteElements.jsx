@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react'
-import { Routes, Route, useRoutes } from 'react-router-dom'
+import { Routes, Route, useRoutes, Outlet, Navigate } from 'react-router-dom'
 
 import MainLayout from 'src/components/MainLayout'
 import AuthLayout from 'src/components/AuthLayout'
@@ -10,6 +10,9 @@ import Success from 'src/modules/Ticket/Success'
 import FilmDetail from 'src/modules/Home/components/FilmDetail'
 import Purchase from 'src/modules/Home/components/Purchase'
 import Login from 'src/modules/Authentication/pages/Login'
+import { useSelector } from 'react-redux'
+import Test from 'src/components/test'
+import BackGround from 'src/components/AuthLayout/BackGround'
 const User = lazy(() => import('src/modules/AdminMovie/pages/User'))
 
 // Không import trực tiếp các pages, vì nó sẽ được tải tất cả ở lần đầu tiên
@@ -34,7 +37,7 @@ function ProtectedRoute() {
 
 function AdminRoute() {
   const { user } = useSelector((state) => state.auth)
-  return user.role === 'QuanTri' ? <Outlet /> : <Navigate to='/' />
+  //   return user === 'QuanTri' ? <Outlet /> : <Navigate to='/' />
 }
 
 export default function useRouteElements() {
@@ -53,18 +56,31 @@ export default function useRouteElements() {
             { path: 'showtime/:movieId', element: <CreateShowTime /> },
             { path: 'addmovie', element: <AddMovie /> }
           ]
-        },
-        {
-          path: '',
-          element: <MainLayout />,
-          children: [
-            { path: '	', element: <Home /> },
-            { path: 'dat-ve/:filmId', element: <FilmDetail /> },
-            { path: 'login', element: <Login /> }
-          ]
         }
       ]
+    },
+    {
+      path: '',
+      index: true,
+      element: (
+        <MainLayout>
+          <Home />
+        </MainLayout>
+      )
+    },
+
+    {
+      path: 'login',
+      element: (
+        <MainLayout>
+          <AuthLayout>
+            <Login>
+              <BackGround />
+            </Login>
+          </AuthLayout>
+        </MainLayout>
+      )
     }
   ])
-return routeElements
+  return routeElements
 }
