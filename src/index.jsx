@@ -258,8 +258,8 @@ const queryClient = new QueryClient({
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
       <BrowserRouter>
+    <Provider store={store}>
         <ThemeProvider value={theme}>
           <QueryClientProvider client={queryClient}>
             <AppProvider>
@@ -269,8 +269,8 @@ root.render(
             <ReactQueryDevtools initialIsOpen={false} />
           </QueryClientProvider>
         </ThemeProvider>
-      </BrowserRouter>
     </Provider>
+      </BrowserRouter>
   </React.StrictMode>
 )
 
