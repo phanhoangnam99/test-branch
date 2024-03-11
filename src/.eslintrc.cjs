@@ -20,15 +20,14 @@ module.exports = {
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx'],
-        moduleDirectory: ['node_modules', 'src/'],
         paths: [path.resolve(__dirname, '')]
-
       }
     },
     react: {
       version: 'detect'
     }
   },
+  resolve: { alisas: { src: path.resolve(__dirname, './src') } },
   rules: {
     'react/prop-types': 0,
     'react/react-in-jsx-scope': 'off',

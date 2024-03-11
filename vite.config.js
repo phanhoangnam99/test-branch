@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import reactRefresh from "@vitejs/plugin-react";
 import svgrPlugin from "vite-plugin-svgr";
 
-import react from "@vitejs/plugin-react";
 
 const path = require("path");
 // https://vitejs.dev/config/
@@ -13,7 +12,7 @@ export default defineConfig({
     outDir: "build",
   },
   plugins: [
-    react(),
+    
     reactRefresh(),
     svgrPlugin({
       svgrOptions: {
