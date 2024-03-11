@@ -11,7 +11,6 @@ import FilmDetail from 'src/modules/Home/components/FilmDetail'
 import Purchase from 'src/modules/Home/components/Purchase'
 import Login from 'src/modules/Authentication/pages/Login'
 import { useSelector } from 'react-redux'
-import Test from 'src/components/test'
 import BackGround from 'src/components/AuthLayout/BackGround'
 const User = lazy(() => import('src/modules/AdminMovie/pages/User'))
 
